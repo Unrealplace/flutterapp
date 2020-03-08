@@ -16,8 +16,45 @@ class _IdeaPageState extends State<IdeaPage> {
             new Container()
           ],
         ),
-        body: new Center(
-          child: null,
+        body: new Container(
+          margin: EdgeInsets.symmetric(vertical: 20),
+          height: 200.0,
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: <Widget>[
+              Container(
+                width: 160.0,
+                color: Colors.amber,
+              ),
+              Container(
+                width: 160.0,
+                color: Colors.red,
+                child: Column(
+                  children: <Widget>[
+                    Text('hello world'),
+                    Text('nice  hello world'),
+                  ],
+                ),
+              ),
+              Container(
+                width: 160.0,
+                color: Colors.amber,
+              ),
+              Container(
+                width: 160.0,
+                color: Colors.orange,
+              ),
+              Container(
+                width: 160.0,
+                color: Colors.amber,
+              ),
+              Container(
+                width: 160.0,
+                color: Colors.green,
+              ),
+            ],
+          ),
+
         ),
       ),
     );

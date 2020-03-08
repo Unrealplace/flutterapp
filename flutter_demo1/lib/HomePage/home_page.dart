@@ -19,7 +19,9 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
         body: new Center(
-          child: MyListView(),
+          child: MyListView(
+            items: new List<String>.generate(1000, (i)  => "item $i"),
+          ),
         ),
         backgroundColor: Colors.red,
       ),
@@ -28,21 +30,21 @@ class _HomePageState extends State<HomePage> {
 }
 
 class MyListView extends StatelessWidget {
-  final List<String> entries = <String>['A','B','C'];
-  final List<int> colorCodes = <int>[600,500,100];
+  final List<String> items;
+
+  MyListView({Key key,this.items});
   
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return ListView.separated(
       padding: const EdgeInsets.all(8),
-      itemCount: entries.length,
+      itemCount: items.length,
       itemBuilder: (BuildContext context,int index) {
         return Container(
           height: 50,
-          color: Colors.amber[colorCodes[index]],
           child: Center(
-            child: Text('Entry ${entries[index]}'),
+            child: Text('Entry ${items[index]}'),
           ),
         );
       },
