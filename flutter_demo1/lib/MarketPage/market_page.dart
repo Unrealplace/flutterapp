@@ -13,17 +13,27 @@ class _MarketPageState extends State<MarketPage> {
             // 后面的省略
             // ......
           ),
-          body: GridView.count(
-              crossAxisCount: 2,
-            children: <Widget>[
-              Text('nice to meet you'),
-              Text('come you are  good'),
-              Text('hahaah hahaaha'),
-              Text('beautiful girl'),
-            ],
-          ),
+          body: GridViewBuilderDemo(),
       ),
     );
   }
 
+}
+
+class GridViewBuilderDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Padding(
+        padding:const EdgeInsets.all(10),
+        child: GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,mainAxisSpacing: 10,crossAxisSpacing: 10),
+            itemBuilder:(context , index) {
+          return Image.network("https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3444508248,1197396609&fm=26&gp=0.jpg",
+            fit: BoxFit.cover,
+            colorBlendMode: BlendMode.colorBurn,
+            color: Colors.white,
+          );
+            } ),
+    );
+  }
 }
