@@ -16,8 +16,18 @@ class _MyPageState extends State<MyPage> {
             new Container()
           ],
         ),
-        body: new Center(
-          child: null,
+        body: Row(
+          children: <Widget>[
+            Expanded(
+              child: Text('浪费你懂哦的农夫的女生哦发你懂我那佛的女生佛的女生佛那都是烦恼都是说你放松颠三倒四那个佛的女生跟 '),
+            ),
+            Expanded(
+              child: Text('WWW浪费你懂哦的农夫的女生哦发你懂我那佛的女生佛的女生佛那都是烦恼都是说你放松颠三倒四那个佛的女生跟 '),
+            ),
+            Expanded(
+              child: Text('fff浪费你懂哦的农夫的女生哦发你懂我那佛的女生佛的女生佛那都是烦恼都是说你放松颠三倒四那个佛的女生跟 '),
+            ),
+          ],
         ),
       ),
     );
