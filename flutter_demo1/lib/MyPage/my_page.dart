@@ -16,20 +16,61 @@ class _MyPageState extends State<MyPage> {
             new Container()
           ],
         ),
-        body: Row(
+        body:Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
-            Expanded(
-              child: Text('浪费你懂哦的农夫的女生哦发你懂我那佛的女生佛的女生佛那都是烦恼都是说你放松颠三倒四那个佛的女生跟 '),
-            ),
-            Expanded(
-              child: Text('WWW浪费你懂哦的农夫的女生哦发你懂我那佛的女生佛的女生佛那都是烦恼都是说你放松颠三倒四那个佛的女生跟 '),
-            ),
-            Expanded(
-              child: Text('fff浪费你懂哦的农夫的女生哦发你懂我那佛的女生佛的女生佛那都是烦恼都是说你放松颠三倒四那个佛的女生跟 '),
-            ),
+            MyCloumn(),
+            MyRow(),
           ],
         ),
       ),
+    );
+  }
+}
+
+class MyCloumn extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          MyImageButton(),
+          MyImageButton(),
+          MyImageButton(),
+          MyImageButton(),
+        ],
+      );
+  }
+}
+
+class MyRow extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: <Widget>[
+        MyImageButton(),
+        MyImageButton(),
+        MyImageButton(),
+        MyImageButton(),
+      ],
+    );
+  }
+}
+
+class MyImageButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Image.asset("assets/images/test.png",width: 50,height: 50,color: Colors.orange,),
+        Text('我是图片'),
+      ],
     );
   }
 }
