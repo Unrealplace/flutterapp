@@ -16,13 +16,44 @@ class _MyPageState extends State<MyPage> {
             new Container()
           ],
         ),
-        body:Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: <Widget>[
-            MyCloumn(),
-            MyRow(),
-          ],
-        ),
+        body:MyContain(),
+      ),
+    );
+  }
+}
+
+class  MyContain extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white70,
+      ),
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(width: 10.0,color: Colors.red,style: BorderStyle.solid),
+                borderRadius: const BorderRadius.all(const Radius.circular(10.0)),
+              ),
+              margin: const EdgeInsets.all(5.0),
+              child: Image.asset('assets/images/test.png'),
+            ),
+          ),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(width: 10.0,color: Colors.red,style: BorderStyle.solid),
+                borderRadius: const BorderRadius.all(const Radius.circular(10.0)),
+              ),
+              margin: const EdgeInsets.all(5.0),
+              child: Image.asset('assets/images/test.png'),
+            ),
+          ),
+        ],
       ),
     );
   }
