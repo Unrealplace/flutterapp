@@ -23,17 +23,22 @@ class _MarketPageState extends State<MarketPage> {
 class GridViewBuilderDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
+    List<Container> _buildGridList(int count) {
+      return List<Container>.generate(count, (int index) => Container(
+        child: Image.asset('assets/images/test.png'),
+      )).toList();
+    }
+
     // TODO: implement build
     return Padding(
         padding:const EdgeInsets.all(10),
-        child: GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,mainAxisSpacing: 10,crossAxisSpacing: 10),
-            itemBuilder:(context , index) {
-          return Image.network("https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3444508248,1197396609&fm=26&gp=0.jpg",
-            fit: BoxFit.cover,
-            colorBlendMode: BlendMode.colorBurn,
-            color: Colors.white,
-          );
-            } ),
+        child: GridView.extent(
+          maxCrossAxisExtent: 150.0,
+          mainAxisSpacing: 4.0,
+          crossAxisSpacing: 4.0,
+          children: _buildGridList(10),
+        ),
     );
   }
 }
