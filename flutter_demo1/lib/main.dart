@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo1/index/index.dart';
+import 'package:flutter_demo1/FunctionPages/center_padding_align.dart';
 
 void main() => runApp(new MyApp());
 
@@ -16,7 +17,9 @@ class MyApp extends StatelessWidget {
   }
 
   List _getSkipList() {
-    List<String> titles = ["第一页面", "第二个页面"];
+    List<String> titles = [
+      "Center（居中布局），Padding（填充布局），Align（对齐布局)",
+      "第二个页面"];
     List<String> routeNames = ["first_page", "second_page"];
     List<SkipModel> listModel = [];
     for (int i = 0; i < titles.length; i++) {
@@ -40,6 +43,8 @@ class MyMainPage extends StatelessWidget {
 
   MyMainPage(this.dataSource);
 
+  BuildContext get context => null;
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -53,7 +58,8 @@ class MyMainPage extends StatelessWidget {
           itemBuilder: (BuildContext context, int index) {
             return GestureDetector(
               onTap: () {
-                _skipWithIndex(index);
+                SkipModel model = dataSource[index];
+                _skipWithIndex(index,model.title);
               },
               child: Container(
                 padding: const EdgeInsets.all(8.0),
@@ -74,7 +80,12 @@ class MyMainPage extends StatelessWidget {
     );
   }
 
-  void _skipWithIndex(int index) {
-    swit
+  void _skipWithIndex(int index,String title) {
+    switch(title){
+      case "Center（居中布局），Padding（填充布局），Align（对齐布局)":
+        Navigator.of(context).push();
+
+        break;
+    }
   }
 }

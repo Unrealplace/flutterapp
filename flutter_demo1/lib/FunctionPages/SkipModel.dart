@@ -1,0 +1,3 @@
+class SkipModel {
+  String title;
+}
