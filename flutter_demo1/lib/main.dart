@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo1/index/index.dart';
 import 'package:flutter_demo1/FunctionPages/center_padding_align.dart';
 import 'package:flutter_demo1/FunctionPages/bar_appbar.dart';
+import 'package:flutter_demo1/FunctionPages/flexible_space_bar.dart';
 
 void main() => runApp(new MyApp());
 
@@ -21,11 +22,12 @@ class MyApp extends StatelessWidget {
     List<String> titles = [
       "Center（居中布局），Padding（填充布局），Align（对齐布局)",
       "Bar-AppBar-应用栏",
+      "Bar-FlexibleSpaceBar-可折叠的应用栏",
     ];
     List<String> routeNames = ["first_page", "second_page"];
     List<SkipModel> listModel = [];
     for (int i = 0; i < titles.length; i++) {
-      SkipModel model = SkipModel(routeNames[i], titles[i]);
+      SkipModel model = SkipModel(null, titles[i]);
       listModel.add(model);
     }
 
@@ -93,6 +95,13 @@ class MyMainPage extends StatelessWidget {
       case "Bar-AppBar-应用栏":
         Navigator.of(context).push(
           MaterialPageRoute(builder: (context) => Demo2(title)),
+        );
+
+        break;
+
+      case "Bar-FlexibleSpaceBar-可折叠的应用栏":
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => Demo3(title)),
         );
 
         break;

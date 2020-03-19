@@ -21,6 +21,7 @@ class _Demo2 extends State<Demo2> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
+      bottomNavigationBar: myBottomAppBar(),
         appBar: AppBar(
           backgroundColor: Colors.cyan,
           title: Text(title),
@@ -33,9 +34,109 @@ class _Demo2 extends State<Demo2> {
                 print('hello world');
               },
             ),
+            IconButton(
+              icon: Icon(Icons.add),
+              tooltip: '闹钟',
+              onPressed: (){
+                print('hello world');
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.directions_bike),
+              tooltip: '闹钟',
+              onPressed: (){
+                print('hello world');
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.add),
+              tooltip: '闹钟',
+              onPressed: (){
+                print('hello world');
+              },
+            )
           ],
         ),
-        body: null,
+        body: myButtonBar(),
     );
+  }
+}
+
+class myButtonBar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return ButtonBar(
+      alignment: MainAxisAlignment.spaceAround,
+
+      children: <Widget>[
+        RaisedButton(
+          child: Text('button1'),
+          color: Colors.orange,
+          textColor: Colors.red,
+          onPressed: (){
+
+          },
+        ),
+
+        RaisedButton(
+          child: Text('button1'),
+          color: Colors.orange,
+          textColor: Colors.red,
+          onPressed: (){
+
+          },
+        ),
+
+        RaisedButton(
+          child: Text('button1'),
+          color: Colors.orange,
+          textColor: Colors.red,
+          onPressed: (){
+
+          },
+        ),
+      ],
+    );
+  }
+}
+
+class myBottomAppBar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+     return BottomAppBar(
+       color: Colors.red,
+       child: Row(
+         mainAxisSize: MainAxisSize.max,
+         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+         children: <Widget>[
+           IconButton(
+             icon: Icon(Icons.menu),
+             onPressed: (){
+
+             },
+           ),
+           IconButton(
+             icon: Icon(Icons.directions_bike),
+             onPressed: (){
+
+             },
+           ),
+           IconButton(
+             icon: Icon(Icons.compare),
+             onPressed: (){
+
+             },
+           ),
+           IconButton(
+             icon: Icon(Icons.compare),
+             onPressed: (){
+
+             },
+           )
+         ],
+       ),
+     );
   }
 }
