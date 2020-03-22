@@ -3,6 +3,9 @@ import 'package:flutter_demo1/index/index.dart';
 import 'package:flutter_demo1/FunctionPages/center_padding_align.dart';
 import 'package:flutter_demo1/FunctionPages/bar_appbar.dart';
 import 'package:flutter_demo1/FunctionPages/flexible_space_bar.dart';
+import 'package:flutter_demo1/FunctionPages/snack_bar.dart';
+import 'package:flutter_demo1/FunctionPages/tabbar.dart';
+import 'package:flutter_demo1/FunctionPages/bottom_navigation_bar.dart';
 
 void main() => runApp(new MyApp());
 
@@ -23,6 +26,9 @@ class MyApp extends StatelessWidget {
       "Center（居中布局），Padding（填充布局），Align（对齐布局)",
       "Bar-AppBar-应用栏",
       "Bar-FlexibleSpaceBar-可折叠的应用栏",
+      "Bar-SnackBar-屏幕底部消息",
+      "Bar-TabBar-选项卡",
+      "BottomNavigationBar-底部导航按钮",
     ];
     List<String> routeNames = ["first_page", "second_page"];
     List<SkipModel> listModel = [];
@@ -102,6 +108,27 @@ class MyMainPage extends StatelessWidget {
       case "Bar-FlexibleSpaceBar-可折叠的应用栏":
         Navigator.of(context).push(
           MaterialPageRoute(builder: (context) => Demo3(title)),
+        );
+
+        break;
+
+      case "Bar-SnackBar-屏幕底部消息":
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => Demo4(title)),
+        );
+
+        break;
+
+      case "Bar-TabBar-选项卡":
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => Demo5(title)),
+        );
+
+        break;
+
+      case "BottomNavigationBar-底部导航按钮":
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => Demo6(title)),
         );
 
         break;
