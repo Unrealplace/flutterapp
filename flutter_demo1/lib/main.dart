@@ -6,6 +6,7 @@ import 'package:flutter_demo1/FunctionPages/flexible_space_bar.dart';
 import 'package:flutter_demo1/FunctionPages/snack_bar.dart';
 import 'package:flutter_demo1/FunctionPages/tabbar.dart';
 import 'package:flutter_demo1/FunctionPages/bottom_navigation_bar.dart';
+import 'package:flutter_demo1/FunctionPages/constrainedbox.dart';
 
 void main() => runApp(new MyApp());
 
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
       "Bar-SnackBar-屏幕底部消息",
       "Bar-TabBar-选项卡",
       "BottomNavigationBar-底部导航按钮",
+      "ConstrainedBox布局",
     ];
     List<String> routeNames = ["first_page", "second_page"];
     List<SkipModel> listModel = [];
@@ -129,6 +131,13 @@ class MyMainPage extends StatelessWidget {
       case "BottomNavigationBar-底部导航按钮":
         Navigator.of(context).push(
           MaterialPageRoute(builder: (context) => Demo6(title)),
+        );
+
+        break;
+
+      case "ConstrainedBox布局":
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => Demo7(title)),
         );
 
         break;
