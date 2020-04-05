@@ -7,7 +7,14 @@ import 'package:flutter_demo1/FunctionPages/snack_bar.dart';
 import 'package:flutter_demo1/FunctionPages/tabbar.dart';
 import 'package:flutter_demo1/FunctionPages/bottom_navigation_bar.dart';
 import 'package:flutter_demo1/FunctionPages/constrainedbox.dart';
-
+import 'package:flutter_demo1/FunctionPages/fitted_box.dart';
+import 'package:flutter_demo1/FunctionPages/buttons.dart';
+import 'package:flutter_demo1/FunctionPages/card_view.dart';
+import 'package:flutter_demo1/FunctionPages/Chip.dart';
+import 'package:flutter_demo1/FunctionPages/Dialog.dart';
+import 'package:flutter_demo1/FunctionPages/expanded.dart'
+;
+import 'package:flutter_demo1/FunctionPages/Textfiled.dart';
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
@@ -31,6 +38,12 @@ class MyApp extends StatelessWidget {
       "Bar-TabBar-选项卡",
       "BottomNavigationBar-底部导航按钮",
       "ConstrainedBox布局",
+      "DropdownButton-下拉按钮,FlatButton-扁平按钮,FloatingActionButton,IconButton,OutLineButton,RawMaterialButton",
+      "Card卡片组件的使用,CheckBox使用",
+      "Chip标签组件使用",
+      "Dialog对话框使用",
+      "Expanded-填充组件，填充剩余所以空间",
+      "TextField-文本输入框",
     ];
     List<String> routeNames = ["first_page", "second_page"];
     List<SkipModel> listModel = [];
@@ -141,6 +154,51 @@ class MyMainPage extends StatelessWidget {
         );
 
         break;
+      case "FittedBox填充布局":
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => Demo8(title)),
+        );
+
+        break;
+
+      case "DropdownButton-下拉按钮,FlatButton-扁平按钮,FloatingActionButton,IconButton,OutLineButton,RawMaterialButton":
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => Demo9(title)),
+        );
+
+        break;
+      case "Card卡片组件的使用,CheckBox使用":
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => Demo10(title)),
+        );
+
+        break;
+      case "Chip标签组件使用":
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => Demo11(title)),
+        );
+
+        break;
+      case "Dialog对话框使用":
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => Demo12(title)),
+        );
+
+        break;
+
+      case "Expanded-填充组件，填充剩余所以空间":
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => Demo13(title)),
+        );
+
+        break;
+      case "TextField-文本输入框":
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => Demo14(title)),
+        );
+
+        break;
+
     }
   }
 }
