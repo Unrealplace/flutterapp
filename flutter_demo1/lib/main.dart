@@ -15,6 +15,12 @@ import 'package:flutter_demo1/FunctionPages/Dialog.dart';
 import 'package:flutter_demo1/FunctionPages/expanded.dart'
 ;
 import 'package:flutter_demo1/FunctionPages/Textfiled.dart';
+import 'package:flutter_demo1/FunctionPages/dater_picker.dart';
+import 'package:flutter_demo1/FunctionPages/Material_layout.dart';
+import 'package:flutter_demo1/FunctionPages/page_view.dart';
+import 'package:flutter_demo1/FunctionPages/slider_view.dart';
+import 'package:flutter_demo1/FunctionPages/animated_padding.dart';
+
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
@@ -44,6 +50,11 @@ class MyApp extends StatelessWidget {
       "Dialog对话框使用",
       "Expanded-填充组件，填充剩余所以空间",
       "TextField-文本输入框",
+      "DaterPicker-日期选择器",
+      "Material-布局组件",
+      "Scroll-PageView-滑动页面",
+      "Slider-滑块使用",
+      "AnimatedPadding-动画间距",
     ];
     List<String> routeNames = ["first_page", "second_page"];
     List<SkipModel> listModel = [];
@@ -108,6 +119,7 @@ class MyMainPage extends StatelessWidget {
     switch (title) {
       case "Center（居中布局），Padding（填充布局），Align（对齐布局)":
         Navigator.of(context).push(
+
           MaterialPageRoute(builder: (context) => Demo1(title)),
         );
 
@@ -199,6 +211,41 @@ class MyMainPage extends StatelessWidget {
 
         break;
 
+      case "DaterPicker-日期选择器":
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => Demo15(title)),
+        );
+
+        break;
+
+
+      case "Material-布局组件":
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => Demo16(title)),
+        );
+
+        break;
+
+      case "Scroll-PageView-滑动页面":
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => Demo17(title)),
+        );
+
+        break;
+
+      case "Slider-滑块使用":
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => Demo18(title)),
+        );
+
+        break;
+
+      case "AnimatedPadding-动画间距":
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => Demo19(title)),
+        );
+
+        break;
     }
   }
 }
