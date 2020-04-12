@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_demo1/index/index.dart';
 import 'package:flutter_demo1/FunctionPages/center_padding_align.dart';
 import 'package:flutter_demo1/FunctionPages/bar_appbar.dart';
@@ -12,17 +13,24 @@ import 'package:flutter_demo1/FunctionPages/buttons.dart';
 import 'package:flutter_demo1/FunctionPages/card_view.dart';
 import 'package:flutter_demo1/FunctionPages/Chip.dart';
 import 'package:flutter_demo1/FunctionPages/Dialog.dart';
-import 'package:flutter_demo1/FunctionPages/expanded.dart'
-;
+import 'package:flutter_demo1/FunctionPages/expanded.dart';
 import 'package:flutter_demo1/FunctionPages/Textfiled.dart';
 import 'package:flutter_demo1/FunctionPages/dater_picker.dart';
 import 'package:flutter_demo1/FunctionPages/Material_layout.dart';
 import 'package:flutter_demo1/FunctionPages/page_view.dart';
 import 'package:flutter_demo1/FunctionPages/slider_view.dart';
 import 'package:flutter_demo1/FunctionPages/animated_padding.dart';
+import 'package:flutter_demo1/FunctionPages/index_stack_view.dart';
+import 'package:flutter_demo1/FunctionPages/switch_view.dart';
+import 'package:flutter_demo1/FunctionPages/table_view.dart';
+import 'package:flutter_demo1/FunctionPages/Rich_text.dart';
+import 'package:flutter_demo1/FunctionPages/layout_demo1.dart';
+import 'package:flutter_demo1/FunctionPages/layout_demo2.dart';
 
-void main() => runApp(new MyApp());
-
+void main() {
+  debugPaintSizeEnabled = true;
+  runApp(MyApp());
+}
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -55,6 +63,12 @@ class MyApp extends StatelessWidget {
       "Scroll-PageView-滑动页面",
       "Slider-滑块使用",
       "AnimatedPadding-动画间距",
+      "IndexStack-索引堆叠组件",
+      "Switch-开关组件",
+      "table-表格组件",
+      "RichText-富文本操作",
+      "风景布局练习",
+      "水果布局练习",
     ];
     List<String> routeNames = ["first_page", "second_page"];
     List<SkipModel> listModel = [];
@@ -119,7 +133,6 @@ class MyMainPage extends StatelessWidget {
     switch (title) {
       case "Center（居中布局），Padding（填充布局），Align（对齐布局)":
         Navigator.of(context).push(
-
           MaterialPageRoute(builder: (context) => Demo1(title)),
         );
 
@@ -218,7 +231,6 @@ class MyMainPage extends StatelessWidget {
 
         break;
 
-
       case "Material-布局组件":
         Navigator.of(context).push(
           MaterialPageRoute(builder: (context) => Demo16(title)),
@@ -246,6 +258,45 @@ class MyMainPage extends StatelessWidget {
         );
 
         break;
+      case "IndexStack-索引堆叠组件":
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => Demo20(title)),
+        );
+
+        break;
+      case "Switch-开关组件":
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => Demo21(title)),
+        );
+
+        break;
+
+      case "table-表格组件":
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => Demo22(title)),
+        );
+
+        break;
+      case "RichText-富文本操作":
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => Demo23(title)),
+        );
+
+        break;
+
+      case "风景布局练习":
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => Demo24(title)),
+        );
+
+        break;
+
+    case "水果布局练习":
+    Navigator.of(context).push(
+    MaterialPageRoute(builder: (context) => Demo25(title)),
+    );
+
+    break;
     }
   }
 }
