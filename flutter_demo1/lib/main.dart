@@ -26,11 +26,13 @@ import 'package:flutter_demo1/FunctionPages/table_view.dart';
 import 'package:flutter_demo1/FunctionPages/Rich_text.dart';
 import 'package:flutter_demo1/FunctionPages/layout_demo1.dart';
 import 'package:flutter_demo1/FunctionPages/layout_demo2.dart';
+import 'package:flutter_demo1/FunctionPages/route_skip.dart';
 
 void main() {
   debugPaintSizeEnabled = true;
   runApp(MyApp());
 }
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -69,6 +71,7 @@ class MyApp extends StatelessWidget {
       "RichText-富文本操作",
       "风景布局练习",
       "水果布局练习",
+      "route-路由相关",
     ];
     List<String> routeNames = ["first_page", "second_page"];
     List<SkipModel> listModel = [];
@@ -291,12 +294,19 @@ class MyMainPage extends StatelessWidget {
 
         break;
 
-    case "水果布局练习":
-    Navigator.of(context).push(
-    MaterialPageRoute(builder: (context) => Demo25(title)),
-    );
+      case "水果布局练习":
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => Demo25(title)),
+        );
 
-    break;
+        break;
+
+      case "route-路由相关":
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => Demo26(title)),
+        );
+
+        break;
     }
   }
 }
