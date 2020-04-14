@@ -30,7 +30,8 @@ class _Demo26 extends State<Demo26> {
 
   _navigateToNextPage(BuildContext context) async {
     final result = await Navigator.of(context).push(MaterialPageRoute(
-      builder: (context) => ThirdScreen("liyang", 222)
+      builder: (context) => ThirdScreen("liyang", 222),
+      fullscreenDialog: true,
     ));
 
     Scaffold.of(context).showSnackBar(SnackBar(content: Text("$result")));
