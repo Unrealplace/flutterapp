@@ -27,6 +27,11 @@ import 'package:flutter_demo1/FunctionPages/Rich_text.dart';
 import 'package:flutter_demo1/FunctionPages/layout_demo1.dart';
 import 'package:flutter_demo1/FunctionPages/layout_demo2.dart';
 import 'package:flutter_demo1/FunctionPages/route_skip.dart';
+import 'package:flutter_demo1/routers/routers.dart';
+import 'package:flutter_demo1/routers/router_handler.dart';
+import 'package:flutter_demo1/routers/application.dart';
+import 'package:fluro/fluro.dart';
+import 'package:flutter_demo1/FunctionPages/http_response.dart';
 
 void main() {
   debugPaintSizeEnabled = true;
@@ -34,8 +39,13 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
+    final router = Router();
+    Routes.configureRoutes(router);
+    Application.router = router;
+
     return new MaterialApp(
       title: 'Flutter Demo',
       theme: new ThemeData(
@@ -72,6 +82,7 @@ class MyApp extends StatelessWidget {
       "风景布局练习",
       "水果布局练习",
       "route-路由相关",
+      "http-网络请求相关",
     ];
     List<String> routeNames = ["first_page", "second_page"];
     List<SkipModel> listModel = [];
@@ -304,6 +315,13 @@ class MyMainPage extends StatelessWidget {
       case "route-路由相关":
         Navigator.of(context).push(
           MaterialPageRoute(builder: (context) => Demo26(title)),
+        );
+
+        break;
+
+      case "http-网络请求相关":
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => Demo27(title)),
         );
 
         break;

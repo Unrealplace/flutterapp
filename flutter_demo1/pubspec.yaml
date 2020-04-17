@@ -26,6 +26,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   dio: any
   fluro: any
+  http: any
 
 
 dev_dependencies:
