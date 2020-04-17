@@ -1,11 +1,25 @@
 {
-  "name": "flutter_node_server",
-  "version": "0.0.1",
-  "scripts": {
-    "start": "node app.js",
-    "precommit": "lint-staged"
-  },
-  "lint-staged": {
-
-  }
+    "name": "flutter_node_server",
+    "version": "0.0.1",
+    "description": "后端厕所",
+    "scripts": {
+        "start": "node app.js",
+        "precommit": "lint-staged"
+    },
+    "lint-staged": {
+        "*.js": [
+            "prettier --write",
+            "git add"
+        ]
+    },
+    "keywords": [
+        "node",
+        "http"
+    ],
+    "author": "liyang",
+    "license": "MIT",
+    "dependencies": {
+        "express": "^4.17.1",
+        "request": "^2.88.2"
+    }
 }
