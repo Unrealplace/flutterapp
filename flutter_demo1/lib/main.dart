@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_demo1/index/index.dart';
 import 'package:flutter_demo1/FunctionPages/center_padding_align.dart';
-import 'package:flutter_demo1/FunctionPages/bar_appbar.dart';
+//import 'package:flutter_demo1/FunctionPages/bar_appbar.dart';
 import 'package:flutter_demo1/FunctionPages/flexible_space_bar.dart';
 import 'package:flutter_demo1/FunctionPages/snack_bar.dart';
 import 'package:flutter_demo1/FunctionPages/tabbar.dart';
@@ -32,9 +32,10 @@ import 'package:flutter_demo1/routers/router_handler.dart';
 import 'package:flutter_demo1/routers/application.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter_demo1/FunctionPages/http_response.dart';
+import 'package:flutter_demo1/pages/good_list.dart';
 
 void main() {
-  debugPaintSizeEnabled = true;
+//  debugPaintSizeEnabled = true;
   runApp(MyApp());
 }
 
@@ -83,6 +84,7 @@ class MyApp extends StatelessWidget {
       "水果布局练习",
       "route-路由相关",
       "http-网络请求相关",
+      "商品列表数据渲染",
     ];
     List<String> routeNames = ["first_page", "second_page"];
     List<SkipModel> listModel = [];
@@ -153,9 +155,9 @@ class MyMainPage extends StatelessWidget {
         break;
 
       case "Bar-AppBar-应用栏":
-        Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => Demo2(title)),
-        );
+//        Navigator.of(context).push(
+////          MaterialPageRoute(builder: (context) => Demo2(title)),
+//        );
 
         break;
 
@@ -322,6 +324,12 @@ class MyMainPage extends StatelessWidget {
       case "http-网络请求相关":
         Navigator.of(context).push(
           MaterialPageRoute(builder: (context) => Demo27(title)),
+        );
+
+        break;
+      case "商品列表数据渲染":
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) =>GoodListPage()),
         );
 
         break;
